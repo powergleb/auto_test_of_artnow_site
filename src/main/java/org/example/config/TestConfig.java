@@ -13,7 +13,7 @@ public record TestConfig(
         @JsonProperty("firefox-version") String firefoxVersion,
         @JsonProperty("chrome-version") String chromeVersion
 ) {
-    static final String SITE_URL;
+    public static final String SITE_URL;
     static final String WAIT_TIMEOUT;
     static final String FIREFOX_VERSION;
     static final String CHROME_VERSION;
