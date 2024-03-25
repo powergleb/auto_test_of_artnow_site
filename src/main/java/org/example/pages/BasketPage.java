@@ -18,7 +18,7 @@ import static org.example.util.PictureHelper.getPicturePrice;
 @Listeners(AllureListener.class)
 public class BasketPage extends BasePage {
 
-    @FindBy(css = "img[alt='РР·Р±СЂР°РЅРЅРѕРµ']")
+    @FindBy(css = "img[alt='Избранное']")
     private WebElement basketButton;
 
     @FindBy(css = "button[onclick='sendCartForm();']")

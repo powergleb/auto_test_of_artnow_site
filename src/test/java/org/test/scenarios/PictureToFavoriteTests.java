@@ -14,19 +14,19 @@ import static org.testng.Assert.assertTrue;
 //@Listeners(AllureListener.class)
 public class PictureToFavoriteTests extends BaseTest {
 
-    /* РўРµСЃС‚ 3
-     * РџРµСЂРµР№С‚Рё РІ вЂњР‘Р°С‚РёРєвЂќ, РїРѕС‚РѕРј РґРѕР±Р°РІРёС‚СЊ РїРµСЂРІСѓСЋ РєР°СЂС‚РёРЅСѓ РІ РёР·Р±СЂР°РЅРЅРѕРµ, РїСЂРѕРІРµСЂРёС‚СЊ, С‡С‚Рѕ РІС‹Р±СЂР°РЅРЅР°СЏ РєР°СЂС‚РёРЅР° СЃРѕС…СЂР°РЅРёР»Р°СЃСЊ РІ СЂР°Р·РґРµР»Рµ В«РР·Р±СЂР°РЅРЅРѕРµВ».
+    /* Тест 3
+     * Перейти в “Батик”, потом добавить первую картину в избранное, проверить, что выбранная картина сохранилась в разделе «Избранное».
      * */
-    @Test(testName = "РџСЂРѕРІРµСЂРєР° РґРѕР±Р°РІР»РµРЅРёСЏ РїРµСЂРІРѕР№ РєР°СЂС‚РёРЅСѓ РІ СЂР°Р·РґРµР»Рµ 'Р‘Р°С‚РёРє' РІ РёР·Р±СЂР°РЅРЅРѕРµ")
+    @Test(testName = "Проверка добавления первой картину в разделе 'Батик' в избранное")
     public void verifyAddingFirstBatikPictureToFavorites() {
-        log.info("Starting test: Verify adding the first 'Р‘Р°С‚РёРє' picture to Favorites");
+        log.info("Starting test: Verify adding the first 'Батик' picture to Favorites");
 
         HomePage home = new HomePage(getDriver());
         PicturePage picture = new PicturePage(getDriver());
         FavoritePage favoritePage = new FavoritePage(getDriver());
 
         home.clickShowMoreOnCategory();
-        home.clickMenuItem("Р‘Р°С‚РёРє");
+        home.clickMenuItem("Батик");
 
         String pictureName = picture.putInFavoriteSpecificPicture(0);
 

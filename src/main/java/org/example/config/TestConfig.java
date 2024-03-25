@@ -14,9 +14,9 @@ public record TestConfig(
         @JsonProperty("chrome-version") String chromeVersion
 ) {
     public static final String SITE_URL;
-    static final String WAIT_TIMEOUT;
-    static final String FIREFOX_VERSION;
-    static final String CHROME_VERSION;
+    public static final String WAIT_TIMEOUT;
+    public static final String FIREFOX_VERSION;
+    public static final String CHROME_VERSION;
 
     static {
         ObjectMapper objectMapper = new ObjectMapper(new YAMLFactory());
