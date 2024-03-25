@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.10.0' // Плагин Allure
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    //jackson
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.16.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
+// Selenium
+    implementation 'com.google.guava:guava:32.1.3-jre'
+    implementation 'io.github.bonigarcia:webdrivermanager:5.7.0'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.18.1'
+    implementation 'org.seleniumhq.selenium:selenium-api:4.18.1'
+    implementation 'org.seleniumhq.selenium:selenium-firefox-driver:4.18.1'
+    implementation 'org.seleniumhq.selenium:selenium-chrome-driver:4.18.1'
+
+    // TestNG
+    implementation 'org.testng:testng:7.9.0'
+
+    // Allure
+    implementation 'io.qameta.allure:allure-testng:2.24.0'
+    implementation 'io.qameta.allure:allure-java-commons:2.24.0'
+    implementation 'io.qameta.allure:allure-rest-assured:2.24.0'
+    implementation 'io.qameta.allure:allure-commandline:2.24.0'
+    implementation 'io.qameta.allure:allure-assertj:2.24.0'
+
+    // Logging
+    implementation 'org.slf4j:slf4j-api:2.0.12'
+    implementation 'org.slf4j:slf4j-reload4j:2.0.12'
+
+    // Lombok
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+}
+
+test {
+    useTestNG()
+}
+
+// Настройка Allure для генерации отчетов
+allure {
+    autoconfigure = true // Автоконфигурация
+}
