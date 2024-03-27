@@ -22,8 +22,8 @@ import static org.example.entity.BrowsersSupport.CHROME;
 import static org.example.entity.BrowsersSupport.FIREFOX;
 
 
-@Slf4j
 public class BaseTest {
+
     private static final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
 
     public static WebDriverWait webDriverWait;
@@ -36,11 +36,7 @@ public class BaseTest {
     @Parameters(value = "browser")
     public void setup(String browser) {
 
-        log.info("""
-                Initializing browser setup for automated testing...
-                Selected site for testing: {}
-                """, SITE_URL);
-        log.info("Selected browser for testing: {}", browser);
+
 
         if (browser.equalsIgnoreCase(FIREFOX.getBrowserName())) {
             WebDriverManager.firefoxdriver().setup();
@@ -65,14 +61,12 @@ public class BaseTest {
         getDriver().manage().deleteAllCookies();
         webDriverWait = new WebDriverWait(getDriver(), Duration.parse("PT20S"));
 
-        log.info("Navigating to site: {}", SITE_URL);
         getDriver().get(SITE_URL);
     }
 
     @AfterMethod(description = "Stop browser")
     public void stopMethod() {
         getDriver().quit();
-        log.info("Browser successfully quited.");
     }
 
     @Attachment(value = "Failure screenshot", type = "image/png")

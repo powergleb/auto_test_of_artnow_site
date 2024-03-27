@@ -10,8 +10,6 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
-@Slf4j
-//@Listeners(AllureListener.class)
 public class PictureStyleMatchingAvailabilityTest extends BaseTest {
 
     /* Tест 1
@@ -20,7 +18,6 @@ public class PictureStyleMatchingAvailabilityTest extends BaseTest {
      * */
     @Test(testName = "Проверка наличия 'Трамвайного пути' на вышитых картинках в жанре 'Городской пейзаж'")
     public void VerifyPresenceOfCityscapePaintingInEmbroideredPictures() {
-        log.info("Starting test: Navigating to 'Вышитые картины', searching for 'Городской пейзаж' genre, and verifying the presence of 'Трамвайный путь'.");
 
         HomePage home = new HomePage(getDriver());
         CatalogPage catalog = new CatalogPage(getDriver());
@@ -40,8 +37,6 @@ public class PictureStyleMatchingAvailabilityTest extends BaseTest {
      * */
     @Test(testName = "Проверка стиля 'Реализм' у картины 'Трамвайный путь' в разделе 'Вышитые картины'")
     public void verifyPaintingStyleTramwayPath() {
-        log.info("Starting test: Navigate to 'Вышитые картины', search for 'Городской пейзаж', " +
-                "open details of painting 'Трамвайные пути', and verify its style - 'Реализм'.");
 
         HomePage home = new HomePage(getDriver());
         CatalogPage catalog = new CatalogPage(getDriver());

@@ -10,8 +10,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
-@Slf4j
-//@Listeners(AllureListener.class)
+
 public class PictureToFavoriteTests extends BaseTest {
 
     /* Тест 3
@@ -19,7 +18,6 @@ public class PictureToFavoriteTests extends BaseTest {
      * */
     @Test(testName = "Проверка добавления первой картину в разделе 'Батик' в избранное")
     public void verifyAddingFirstBatikPictureToFavorites() {
-        log.info("Starting test: Verify adding the first 'Батик' picture to Favorites");
 
         HomePage home = new HomePage(getDriver());
         PicturePage picture = new PicturePage(getDriver());

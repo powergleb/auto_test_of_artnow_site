@@ -17,7 +17,6 @@ import java.io.ByteArrayInputStream;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
-@Slf4j
 public class PictureCartPriceConsistencyTest extends BaseTest {
 
     /* Тест 5
@@ -26,7 +25,6 @@ public class PictureCartPriceConsistencyTest extends BaseTest {
      * */
     @Test(testName = "Добавление первого изделия в корзину в разделе 'Ювелирное искусство'")
     public void verifyAddingFirstJewelryItemToCartAndPriceConsistency() {
-        log.info("Starting test: Adding the first jewelry item to the cart in the 'Ювелирное искусство' section and verifying its presence and unchanged price.");
 
         HomePage home = new HomePage(getDriver());
         PicturePage picture = new PicturePage(getDriver());
@@ -50,7 +48,6 @@ public class PictureCartPriceConsistencyTest extends BaseTest {
     @Description("Результат искусственно был сделан ошибочным")
     @Attachment(value = "Failure screenshot", type = "image/png")
     public void verifyAddingFirstJewelryItemToCartAndPriceConsistencyBadResult() {
-        log.info("Starting test: Adding the first jewelry item to the cart in the 'Ювелирное искусство' section and verifying its presence and unchanged price.");
 
         HomePage home = new HomePage(getDriver());
         PicturePage picture = new PicturePage(getDriver());
