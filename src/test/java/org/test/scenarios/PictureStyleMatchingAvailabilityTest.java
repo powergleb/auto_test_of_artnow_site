@@ -12,11 +12,11 @@ import static org.testng.Assert.assertTrue;
 
 public class PictureStyleMatchingAvailabilityTest extends BaseTest {
 
-    /* TРµСЃС‚ 1
-     * РџРµСЂРµР№С‚Рё РІ СЂР°Р·РґРµР» "Р’С‹С€РёС‚С‹Рµ РєР°СЂС‚РёРЅС‹", РІС‹РїРѕР»РЅРёС‚СЊ РїРѕРёСЃРє РїРѕ Р¶Р°РЅСЂСѓ "Р“РѕСЂРѕРґСЃРєРѕР№ РїРµР№Р·Р°Р¶",
-     * Рё РїСЂРѕРІРµСЂРёС‚СЊ РЅР°Р»РёС‡РёРµ РєР°СЂС‚РёРЅС‹ "РўСЂР°РјРІР°Р№РЅС‹Р№ РїСѓС‚СЊ" РІ СЂРµР·СѓР»СЊС‚Р°С‚Р°С… РїРѕРёСЃРєР°.
+    /* Tест 1
+     * Перейти в раздел "Вышитые картины", выполнить поиск по жанру "Городской пейзаж",
+     * и проверить наличие картины "Трамвайный путь" в результатах поиска.
      * */
-    @Test(testName = "РџСЂРѕРІРµСЂРєР° РЅР°Р»РёС‡РёСЏ 'РўСЂР°РјРІР°Р№РЅРѕРіРѕ РїСѓС‚Рё' РЅР° РІС‹С€РёС‚С‹С… РєР°СЂС‚РёРЅРєР°С… РІ Р¶Р°РЅСЂРµ 'Р“РѕСЂРѕРґСЃРєРѕР№ РїРµР№Р·Р°Р¶'")
+    @Test(testName = "Проверка наличия 'Трамвайного пути' на вышитых картинках в жанре 'Городской пейзаж'")
     public void VerifyPresenceOfCityscapePaintingInEmbroideredPictures() {
 
         HomePage home = new HomePage(getDriver());
@@ -24,18 +24,18 @@ public class PictureStyleMatchingAvailabilityTest extends BaseTest {
         PicturePage picture = new PicturePage(getDriver());
 
         home.clickShowMoreOnCategory();
-        home.clickMenuItem("Р’С‹С€РёС‚С‹Рµ РєР°СЂС‚РёРЅС‹");
-        catalog.selectPictureGenre("Р“РѕСЂРѕРґСЃРєРѕР№ РїРµР№Р·Р°Р¶");
-        boolean isCatalogExists = picture.isPictureByNameExists("РўСЂР°РјРІР°Р№РЅС‹Р№ РїСѓС‚СЊ");
+        home.clickMenuItem("Вышитые картины");
+        catalog.selectPictureGenre("Городской пейзаж");
+        boolean isCatalogExists = picture.isPictureByNameExists("Трамвайный путь");
 
         assertTrue(isCatalogExists);
     }
 
-    /* РўРµСЃС‚ 2
-     * РџРµСЂРµР№С‚Рё РІ вЂњР’С‹С€РёС‚С‹Рµ РєР°СЂС‚РёРЅС‹вЂќ, РїСЂРѕРёР·РІРµСЃС‚Рё РїРѕРёСЃРє РїРѕ Р¶Р°РЅСЂСѓ В«Р“РѕСЂРѕРґСЃРєРѕР№ РїРµР№Р·Р°Р¶В», РѕС‚РєСЂС‹С‚СЊ
-     * РїРѕРґСЂРѕР±РЅРѕСЃС‚Рё РєР°СЂС‚РёРЅС‹ вЂњРўСЂР°РјРІР°Р№РЅС‹Р№ РїСѓС‚СЊвЂќ, РїСЂРѕРІРµСЂРёС‚СЊ, С‡С‚Рѕ СЃС‚РёР»СЊ РєР°СЂС‚РёРЅС‹ В«Р РµР°Р»РёР·РјВ».
+    /* Тест 2
+     * Перейти в “Вышитые картины”, произвести поиск по жанру «Городской пейзаж», открыть
+     * подробности картины “Трамвайный путь”, проверить, что стиль картины «Реализм».
      * */
-    @Test(testName = "РџСЂРѕРІРµСЂРєР° СЃС‚РёР»СЏ 'Р РµР°Р»РёР·Рј' Сѓ РєР°СЂС‚РёРЅС‹ 'РўСЂР°РјРІР°Р№РЅС‹Р№ РїСѓС‚СЊ' РІ СЂР°Р·РґРµР»Рµ 'Р’С‹С€РёС‚С‹Рµ РєР°СЂС‚РёРЅС‹'")
+    @Test(testName = "Проверка стиля 'Реализм' у картины 'Трамвайный путь' в разделе 'Вышитые картины'")
     public void verifyPaintingStyleTramwayPath() {
 
         HomePage home = new HomePage(getDriver());
@@ -43,14 +43,14 @@ public class PictureStyleMatchingAvailabilityTest extends BaseTest {
         PicturePage picture = new PicturePage(getDriver());
 
         home.clickShowMoreOnCategory();
-        home.clickMenuItem("Р’С‹С€РёС‚С‹Рµ РєР°СЂС‚РёРЅС‹");
-        catalog.selectPictureGenre("Р“РѕСЂРѕРґСЃРєРѕР№ РїРµР№Р·Р°Р¶");
+        home.clickMenuItem("Вышитые картины");
+        catalog.selectPictureGenre("Городской пейзаж");
 
-        boolean isCatalogExists = picture.isPictureByNameExists("РўСЂР°РјРІР°Р№РЅС‹Р№ РїСѓС‚СЊ");
+        boolean isCatalogExists = picture.isPictureByNameExists("Трамвайный путь");
 
         if (isCatalogExists) {
-            picture.openPictureInfo("РўСЂР°РјРІР°Р№РЅС‹Р№ РїСѓС‚СЊ");
-            boolean isRealism = picture.checkStylePicture("Р РµР°Р»РёР·Рј");
+            picture.openPictureInfo("Трамвайный путь");
+            boolean isRealism = picture.checkStylePicture("Реализм");
 
             assertTrue(isRealism);
         }

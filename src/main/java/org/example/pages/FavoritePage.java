@@ -13,7 +13,7 @@ import java.util.List;
 
 @Listeners(AllureListener.class)
 public class FavoritePage extends BasePage {
-    @FindBy(css = "img[alt='РР·Р±СЂР°РЅРЅРѕРµ']")
+    @FindBy(css = "img[alt='Избранное']")
     private WebElement favoriteButton;
 
     @FindBy(css = "div[class='post']")

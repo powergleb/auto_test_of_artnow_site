@@ -12,16 +12,16 @@ import static org.testng.Assert.assertTrue;
 //@Listeners(AllureListener.class)
 public class PictureSearchResultsTest extends BaseTest {
 
-    /* РўРµСЃС‚ 4
-     * Р’РІРµСЃС‚Рё РІ РїРѕРёСЃРєРѕРІСѓСЋ СЃС‚СЂРѕРєСѓ В«Р–РёСЂР°С„В», РїСЂРѕРІРµСЂРёС‚СЊ, С‡С‚Рѕ РЅР°Р·РІР°РЅРёРµ РїРµСЂРІРѕР№ РєР°СЂС‚РёРЅС‹ СЃРѕРґРµСЂР¶РёС‚ СЃР»РѕРІРѕ В«Р–РёСЂР°С„В».
+    /* Тест 4
+     * Ввести в поисковую строку «Жираф», проверить, что название первой картины содержит слово «Жираф».
      * */
-    @Test(testName = "РџРѕРёСЃРє РїРѕ РєР»СЋС‡РµРІРѕРјСѓ СЃР»РѕРІСѓ 'Р–РёСЂР°С„'")
+    @Test(testName = "Поиск по ключевому слову 'Жираф'")
     public void verifyTitleOfFirstPaintingInSearchResultsForGiraffe() {
 
         HomePage home = new HomePage(getDriver());
         PicturePage picture = new PicturePage(getDriver());
 
-        String request = "Р–РёСЂР°С„";
+        String request = "Жираф";
 
         home.enteringTextInSearchField(request);
         boolean isContains = picture.checkContainsRequestInName(request);

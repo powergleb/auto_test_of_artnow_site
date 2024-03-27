@@ -19,11 +19,11 @@ import static org.testng.Assert.assertTrue;
 
 public class PictureCartPriceConsistencyTest extends BaseTest {
 
-    /* РўРµСЃС‚ 5
-     * РџРµСЂРµР№С‚Рё РІ вЂњР®РІРµР»РёСЂРЅРѕРµ РёСЃРєСѓСЃСЃС‚РІРѕвЂќ, РґРѕР±Р°РІРёС‚СЊ РїРµСЂРІРѕРµ РёР·РґРµР»РёРµ РІ РєРѕСЂР·РёРЅСѓ,
-     * РїСЂРѕРІРµСЂРёС‚СЊ, С‡С‚Рѕ РІС‹Р±СЂР°РЅРЅС‹Р№ С‚РѕРІР°СЂ РЅР°С…РѕРґРёС‚СЃСЏ РІ РєРѕСЂР·РёРЅРµ, СЃС‚РѕРёРјРѕСЃС‚СЊ С‚РѕРІР°СЂР° РЅРµ РёР·РјРµРЅРёР»Р°СЃСЊ.
+    /* Тест 5
+     * Перейти в “Ювелирное искусство”, добавить первое изделие в корзину,
+     * проверить, что выбранный товар находится в корзине, стоимость товара не изменилась.
      * */
-    @Test(testName = "Р”РѕР±Р°РІР»РµРЅРёРµ РїРµСЂРІРѕРіРѕ РёР·РґРµР»РёСЏ РІ РєРѕСЂР·РёРЅСѓ РІ СЂР°Р·РґРµР»Рµ 'Р®РІРµР»РёСЂРЅРѕРµ РёСЃРєСѓСЃСЃС‚РІРѕ'")
+    @Test(testName = "Добавление первого изделия в корзину в разделе 'Ювелирное искусство'")
     public void verifyAddingFirstJewelryItemToCartAndPriceConsistency() {
 
         HomePage home = new HomePage(getDriver());
@@ -31,7 +31,7 @@ public class PictureCartPriceConsistencyTest extends BaseTest {
         BasketPage basket = new BasketPage(getDriver());
 
         home.clickShowMoreOnCategory();
-        home.clickMenuItem("Р®РІРµР»РёСЂРЅРѕРµ РёСЃРєСѓСЃСЃС‚РІРѕ");
+        home.clickMenuItem("Ювелирное искусство");
         Picture firstPicture = picture.putInBasketSpecificPicture(0);
 
         basket.openBasketFromModalPage();
@@ -40,12 +40,12 @@ public class PictureCartPriceConsistencyTest extends BaseTest {
         assertTrue(isExistAndEqualPrice);
     }
 
-    /* РўРµСЃС‚ 6
-     * РџРµСЂРµР№С‚Рё РІ вЂњР®РІРµР»РёСЂРЅРѕРµ РёСЃРєСѓСЃСЃС‚РІРѕвЂќ, РґРѕР±Р°РІРёС‚СЊ РїРµСЂРІРѕРµ РёР·РґРµР»РёРµ РІ РєРѕСЂР·РёРЅСѓ,
-     * РїСЂРѕРІРµСЂРёС‚СЊ, С‡С‚Рѕ РІС‹Р±СЂР°РЅРЅС‹Р№ С‚РѕРІР°СЂ РЅР°С…РѕРґРёС‚СЃСЏ РІ РєРѕСЂР·РёРЅРµ, СЃС‚РѕРёРјРѕСЃС‚СЊ С‚РѕРІР°СЂР° РЅРµ РёР·РјРµРЅРёР»Р°СЃСЊ.
+    /* Тест 6
+     * Перейти в “Ювелирное искусство”, добавить первое изделие в корзину,
+     * проверить, что выбранный товар находится в корзине, стоимость товара не изменилась.
      * */
-    @Test(testName = "РќРµСѓРґР°С‡РЅРѕРµ РґРѕР±Р°РІР»РµРЅРёРµ РїРµСЂРІРѕРіРѕ РёР·РґРµР»РёСЏ РІ РєРѕСЂР·РёРЅСѓ РІ СЂР°Р·РґРµР»Рµ 'Р®РІРµР»РёСЂРЅРѕРµ РёСЃРєСѓСЃСЃС‚РІРѕ'")
-    @Description("Р РµР·СѓР»СЊС‚Р°С‚ РёСЃРєСѓСЃСЃС‚РІРµРЅРЅРѕ Р±С‹Р» СЃРґРµР»Р°РЅ РѕС€РёР±РѕС‡РЅС‹Рј")
+    @Test(testName = "Неудачное добавление первого изделия в корзину в разделе 'Ювелирное искусство'")
+    @Description("Результат искусственно был сделан ошибочным")
     @Attachment(value = "Failure screenshot", type = "image/png")
     public void verifyAddingFirstJewelryItemToCartAndPriceConsistencyBadResult() {
 
@@ -54,7 +54,7 @@ public class PictureCartPriceConsistencyTest extends BaseTest {
         BasketPage basket = new BasketPage(getDriver());
 
         home.clickShowMoreOnCategory();
-        home.clickMenuItem("Р®РІРµР»РёСЂРЅРѕРµ РёСЃРєСѓСЃСЃС‚РІРѕ");
+        home.clickMenuItem("Ювелирное искусство");
         Picture firstPicture = picture.putInBasketSpecificPicture(0);
 
         basket.openBasketFromModalPage();
@@ -65,7 +65,7 @@ public class PictureCartPriceConsistencyTest extends BaseTest {
         } catch (AssertionError e) {
             byte[] bytes = captureScreenshot(getDriver());
             Allure.addAttachment("Failure screen", new ByteArrayInputStream(bytes));
-            Allure.addAttachment("Failure details", "РўРµСЃС‚ Р·Р°РІРµСЂС€РёР»СЃСЏ РЅРµСѓРґР°С‡РµР№: " + e.getMessage());
+            Allure.addAttachment("Failure details", "Тест завершился неудачей: " + e.getMessage());
             throw e;
         }
     }
